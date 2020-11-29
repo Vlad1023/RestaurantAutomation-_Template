@@ -1,28 +1,71 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-app-bar
+      app
+      color="secondary"
+      dark
+    >
+    <div class = "chair">
+       <i class="material-icons chosen md-24">weekend</i>
+       <i class="material-icons md-24">weekend</i>
+       <i class="material-icons md-24">weekend</i>
+       <i class="material-icons md-24">weekend</i>
+       <i class="material-icons md-24">weekend</i>
+       <i class="material-icons md-24">weekend</i>
+    </div>
+    <div class="txt">
+        Hall № 1
+    </div>
+    <div class="txt">
+        Table № 1
+    </div>
+    </v-app-bar>
+    <v-main class="blue lighten-2">
+      <router-view></router-view>
+    </v-main>
+    <v-footer
+      app
+      color="secondary"
+      dark
+    >
+    </v-footer>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+
+  data: () => ({
+    //
+  }),
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+
+.chair{
+  width: 90px;
 }
+
+.txt{
+  color: black;
+  font-weight: bold;
+  font-size: 3rem;
+  margin-left: 100px;
+}
+
+.v-application {
+    background-color: var(--v-background-base) !important;
+}
+
+
+i{
+  margin-left: 5px;
+}
+.chosen{
+  color: green;
+}
+
 </style>
