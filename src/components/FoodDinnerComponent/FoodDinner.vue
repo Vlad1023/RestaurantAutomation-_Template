@@ -2,7 +2,7 @@
   <v-layout row >
     <v-container fluid grid-list-sm>
       <v-data-iterator
-        :items="getBreakfastList"
+        :items="getDinnerList"
         :items-per-page.sync="itemsPerPage"
         :page="page"
         :search="search"
@@ -146,7 +146,7 @@
 
 <script>
   export default {
-    name: 'FoodBreakfast',
+    name: 'FoodDinner',
     data () {
       return {
         show: false,
@@ -164,19 +164,19 @@
       }
     },
     computed: {
-      getBreakfastList() {
-        return this.$store.state.breakfast;
+      getDinnerList() {
+        return this.$store.state.dinner;
       },
       numberOfPages () {
-        return Math.ceil(this.getBreakfastList.length / this.itemsPerPage)
+        return Math.ceil(this.getDinnerList.length / this.itemsPerPage)
       },
       filteredKeys () {
-        return this.getBreakfastList.filter(key => key !== 'Title')
+        return this.getDinnerList.filter(key => key !== 'Title')
       }
     },
     methods: {
       nextPage () {
-        if (this.page + 1 <= this.numberOfPages) this.page += 1
+        if (this.page + 1 <= this.numberOfPages) this.page += 1;
       },
       formerPage () {
         if (this.page - 1 >= 1) this.page -= 1
@@ -187,4 +187,4 @@
     }  
   }
 </script>
-<style scoped src="./FoodBreakfast.css"></style>
+<style scoped src="./FoodDinner.css"></style>
