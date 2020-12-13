@@ -1,4 +1,4 @@
-import { MenuComponent, FoodDinnerComponent, FoodBreakfastComponent, FoodSupperComponent } from '@components/';
+import { MenuComponent, FoodDinnerComponent, FoodBreakfastComponent, FoodSupperComponent, LoginComponent, AdminComponent } from '@components/';
 
 
 import Vue from 'vue';
@@ -13,9 +13,14 @@ const routes = [
     children: [
       { path: "breakfast", component: FoodBreakfastComponent },
       { path: "dinner", component: FoodDinnerComponent },
-      { path: "supper", component: FoodSupperComponent }
+      { path: "supper", component: FoodSupperComponent },
+      { path: "login", component: LoginComponent }
     ]
   },
+  {
+    path: '/admin',
+    component: AdminComponent
+  }
   
 ],
 

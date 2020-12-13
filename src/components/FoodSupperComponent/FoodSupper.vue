@@ -59,6 +59,13 @@
                 </v-btn>
               </v-btn-toggle>
             </template>
+                              <v-btn
+                    icon
+                    href="http://127.0.0.1:8080/Reference/SortDishes.html"
+                    target="_blank"
+                  >
+                    <v-icon>contact_support</v-icon>
+                  </v-btn>
           </v-toolbar>
         </template>
   
@@ -76,6 +83,17 @@
 
               <div class="display-2 ml-1">
                 <span :class="{'green--text font-weight-bold': sortBy === 'Title'}">{{dish.title}}</span>
+                                  <v-btn
+                    icon
+                    href="http://127.0.0.1:8080/Reference/AddDishToOrder.html"
+                    target="_blank"
+                  >
+                    <v-icon>contact_support</v-icon>
+                  </v-btn>
+              </div>
+
+              <div class = "mt-2 ml-1">
+                <v-btn @click="addToOrder(dish)" small color="primary">Add to order</v-btn>
               </div>
 
               <v-card-subtitle class="mt-2 text-right">
@@ -183,6 +201,9 @@
       },
       updateItemsPerPage (number) {
         this.itemsPerPage = number
+      },
+      addToOrder (dish) {
+        this.$store.commit('addToOrder', dish);
       }
     }  
   }
